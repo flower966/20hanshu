@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+//   1、选择排序
+//      function fun(arr) {
+//          for(let i=0;i<arr.length;i++){
+//              for(let j=i+1;j<arr.length;j++){
+//                  if(arr[i]>arr[j]){
+//                      let tmp=arr[i];
+//                      arr[i]=arr[j];
+//                      arr[j]=tmp;
+//                  }
+//              }
+//          }console.log(arr);
+//      }fun([2,1,5,3,8,9]);
+
+//   2、冒泡排序
+//      function fun(arr,type){
+//          for(let i=0;i<arr.length;i++){
+//              for(let j=0;j<arr.length-i-1;j++){
+//                  if(type=='asc'){
+//                      if(arr[j]>arr[j+1]){
+//                      let tmp=arr[j];
+//                      arr[j]=arr[j+1];
+//                      arr[j+1]=tmp;
+//                      }
+//                  }
+//                  if(type=='desc'){
+//                      if(arr[j]<arr[j+1]){
+//                          let tmp=arr[j];
+//                          arr[j]=arr[j+1];
+//                          arr[j+1]=tmp;
+//                      }
+//                  }
+//              }
+//          }console.log(arr);
+//      }fun([1,2,4,8,6,3,5,9,7],'asc');
+
+//   3、求得一个二维数组中长度最长的数组
+//    function fun(arr){
+//        let max=arr[0];
+//        for(let i=0;i<arr.length;i++){
+//            if(max.length<arr[i].length){
+//                max=arr[i];
+//            }
+//        }console.log(max);
+//    }fun([[1,2,3,4],[1,2,3],[1,2,3,4,5,6,7],[1,2,3,4,5]]);
+
+//    4、求二维数组的和
+//    let sum=0;
+//    function arraySum(arr){
+//        for(let i=0;i<arr.length;i++){
+//            for(let j=0;j<arr[i].length;j++){
+//                sum+=arr[i][j];
+//            }
+//        }console.log(sum);
+//    }arraySum([[1,2,3],[1,2,3,4],[1,2,3,4,5]]);
+
+//    5、求二维数组的最大值
+//    function fun(arr){
+//        let max=arr[0][0];
+//        for(let i=0;i<arr.length;i++){
+//            for(let j=0;j<arr[i].length;j++){
+//                if(arr[i][j]>max){
+//                    max=arr[i][j];
+//                }
+//            }
+//        }console.log(max);
+//    }fun([[1,2,3],[1,2,55],[4,5,6]]);
+
+//    6、复制一个二维数组
+//    function fun(arr){
+//        let brr=[];
+//        for(let i=0;i<arr.length;i++){
+//            brr[i]=[];
+//            for(let j=0;j<arr[i].length;j++){
+//                brr[i][j]=arr[i][j];
+//            }
+//        }console.log(brr);
+//    }fun([[1,2,3,4,5],[1,2,3,4],[1,2,3]]);
+
+//    7、找出一个数字数组，里面大于5的数的个数
+//    function fun(arr){
+//        let count=0;
+//        for(let i=0;i<arr.length;i++){
+//            if(arr[i]>5){
+//                count++;
+//            }
+//        }console.log(count);
+//    }fun([1,2,3,4,5,6,7,8,9]);
+
+//    8、选出数组里大于5的数，组成一个新数组
+//    function fun(arr){
+//        let brr=[];
+//        let n=0;
+//        for(let i=0;i<arr.length;i++){
+//            if(arr[i]>5){
+//                brr[n]=arr[i];
+//                n++;
+//            }
+//        }console.log(brr);
+//    }fun([1,2,4,8,9,11,55]);
+
+//    9、输入一个数字或者字符，添加在数组的最后
+//    function fun(arr){
+//        let brr=[];
+//        for(let i=0;i<arr.length;i++){
+//            brr[brr.length]=arr[i];
+//        }brr[brr.length]='a';
+//        console.log(brr);
+//    }fun([1,2,3,4,5]);
+
+//    10、将数组中数字内容求和
+//    function arraySum(arr){
+//        let sum=0;
+//        for(let i=0;i<arr.length;i++){
+//            if(typeof arr[i]==='number'){
+//                sum+=arr[i];
+//            }
+//        }console.log(sum);
+//    }arraySum([1,2,3,4,5,'a']);
+
+//    11、判断数组中是否所有的数字都大于0
+//    function fun(arr){
+//        let flag='大于0';
+//        for(let i=0;i<arr.length;i++){
+//            if(arr[i]<0){
+//                flag='不全大于0';
+//                break;
+//            }
+//        }console.log(flag);
+//    }fun([1,2,-1,-2,3,-3]);
+
+//    12、合并两个数组
+//    function fun(arr,brr){
+//        let crr=[];
+//        for(let i=0;i<arr.length;i++){
+//            crr[crr.length]=arr[i];
+//        }for(let i=0;i<arr.length;i++){
+//            crr[crr.length]=brr[i];
+//        }console.log(crr);
+//    }fun([1,2,3],[4,5,6]);
+
+//    13、找数组中某一位置的下标
+//    function fun(arr,a){
+//        if(a<0||a>arr.length){
+//            console.log('false');
+//        }
+//        for(i=0;i<arr.length;i++){
+//            if(arr[i]===a){
+//                console.log(i);
+//            }
+//        }
+//    }fun([1,2,3,4,5,6,7],-8);
+
+//    14、数组反转
+//    function fun(arr){
+//        let brr=[];
+//        for(let i=arr.length-1;i>=0;i--){
+//            brr[brr.length]=arr[i];
+//        }console.log(brr);
+//    }fun([1,2,3,4,5]);
+
+//    15、移除数组中等于3的元素
+//    function fun(arr){
+//        let brr=[];
+//        for(let i=0;i<arr.length;i++){
+//            if(arr[i]!=3){
+//                brr[brr.length]=arr[i];
+//            }
+//        }console.log(brr);
+//    }fun([1,2,3,4,5]);
+
+//    16、删除数组的第一个值
+//    function fun(arr){
+//        for(let i=1;i<arr.length;i++){
+//            arr[i-1]=arr[i];
+//        }arr.length=arr.length-1;
+//        console.log(arr);
+//    }fun([1,2,3,4,5]);
+
+//    17、在数组前面加一个值
+//    function fun(arr){
+//        let brr=[];
+//        for(let i=0;i<arr.length;i++){
+//            brr[i+1]=arr[i];
+//        }brr[0]='a';
+//        console.log(brr);
+//    }fun([1,2,3,4,5]);
+
+//    18、n行m列表格
+//     function fun(n,m){
+//         document.write('<table border="1"; cellspacing="0"; cellpadding="20">');
+//         for(let x=1;x<=n;x++){
+//             document.write('<tr>');
+//             for(let j=1;j<=10;j++){
+//                 document.write('<td>');
+//                 document.write('</td>');
+//             }document.write('</tr>');
+//         }document.write('</table>');
+//     }fun(5,6);
+
+//    19、n*n乘法表
+//    function fun(n){
+//        for(let x=1;x<=n;x++){
+//            for(let y=1;y<=x;y++){
+//                document.write(x+'*'+y+'='+x*y+'&nbsp');
+//            }document.write('</br>');}
+//    }fun(9);
+
+//    20、输入一个数判断是否是质数
+//    function nub(){
+//        let nub=prompt('请输入一个数');
+//        let flag='是质数';
+//        for(let i=2;i<nub;i++){
+//            if(nub%i==0){
+//                flag='不是质数';
+//            }
+//        }if(nub==1){
+//            console.log('不是质数也不是合数');
+//        }else{
+//            console.log(flag);
+//        }
+//    }nub(8);
+
+
+
+</script>
+<body>
+
+</body>
+</html>
